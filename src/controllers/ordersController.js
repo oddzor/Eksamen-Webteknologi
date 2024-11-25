@@ -1,14 +1,12 @@
+// Logic and error handling for orders related requests.
+
 const orderModel = require("../models/orderModel");
 
 const orderController = {
   createOrder: async (req, res) => {
     try {
       const { customerName, items } = req.body;
-
-      // Create an order and get the order ID
       const orderId = await orderModel.createOrder(customerName);
-
-      // Add each item to the order_items table
       await Promise.all(
         items.map((item) =>
           orderModel.addOrderItem(orderId, item.productId, item.quantity)
@@ -24,7 +22,6 @@ const orderController = {
 
   getOrders: async (req, res) => {
     try {
-      // Fetch all orders
       const orders = await orderModel.getAllOrders();
       res.status(200).json(orders);
     } catch (err) {
@@ -36,27 +33,20 @@ const orderController = {
   getOrderById: async (req, res) => {
     try {
       const { id } = req.params;
-
-      // Fetch a specific order by ID
       const order = await orderModel.getOrderById(id);
-
       if (!order) {
         return res.status(404).json({ error: "Order not found" });
       }
-
       res.status(200).json(order);
     } catch (err) {
       console.error("Fetch Order Error:", err);
       res.status(500).json({ error: "Internal server error" });
     }
   },
-
   updateOrderStatus: async (req, res) => {
     try {
       const { id } = req.params;
       const { status } = req.body;
-
-      // Update the status of an order
       const updated = await orderModel.updateOrderStatus(id, status);
 
       if (!updated) {
@@ -73,14 +63,11 @@ const orderController = {
   deleteOrder: async (req, res) => {
     try {
       const { id } = req.params;
-
-      // Delete the order
       const deleted = await orderModel.deleteOrder(id);
 
       if (!deleted) {
         return res.status(404).json({ error: "Order not found" });
       }
-
       res.status(200).json({ message: "Order deleted successfully" });
     } catch (err) {
       console.error("Delete Order Error:", err);

@@ -1,3 +1,5 @@
+// Logic and error handling for products related requests.
+
 const productModel = require("../models/productModel");
 
 const productController = {

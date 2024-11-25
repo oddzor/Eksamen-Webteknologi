@@ -1,3 +1,5 @@
+// Logic for structuring of queries for users.
+
 const db = require("../utils/db");
 
 const userModel = {

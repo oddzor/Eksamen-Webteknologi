@@ -1,3 +1,5 @@
+// Test scripts built with mock requests to ensure admin access and middleware work as intended.
+
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const adminAuthorization = require('../utils/adminAuthorization');

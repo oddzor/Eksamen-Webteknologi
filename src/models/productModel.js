@@ -1,3 +1,5 @@
+// Logic for structuring of queries for products
+
 const db = require('../utils/db');
 
 const productModel = {

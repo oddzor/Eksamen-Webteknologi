@@ -13,6 +13,6 @@ router.put('/orders/:id', adminAuthorization, adminController.updateOrderStatus)
 
 router.get('/test', adminAuthorization, (req, res) => {
     res.status(200).json({ message: 'Admin access verified', user: req.user });
-  });
+  });  // Test routing used for troubleshooting token access
 
 module.exports = router;

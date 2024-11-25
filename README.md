@@ -1,5 +1,5 @@
 ## Overview
-This application is a mock backend for a fictional business **Node.js**, **Express**, and **MySQL**. It provides APIs for managing products, orders, user and admin operations. The application uses JWT-based authentication and includes role-based access control for admin endpoints.
+This application is a mock backend for a fictional business, built with **Javascript**, **Node.js**, **Express**, and **MySQL**. It provides APIs for managing products, orders, user and admin operations. The application uses JWT-based authentication and includes role-based access control for admin endpoints.
 
 
 ## Setup and installation

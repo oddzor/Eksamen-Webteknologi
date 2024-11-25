@@ -1,3 +1,5 @@
+// Logic for structuring SQL queries and joining of tables related to orders
+
 const db = require('../utils/db');
 
 const orderModel = {

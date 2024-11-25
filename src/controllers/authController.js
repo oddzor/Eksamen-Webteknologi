@@ -1,3 +1,5 @@
+// Logic for encrypting password, JWT token and crosschecking user credentials in the database. 
+
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const UserModel = require("../models/userModel");

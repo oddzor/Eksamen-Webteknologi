@@ -1,3 +1,5 @@
+// Logic and error handling for admin protected requests.
+
 const productModel = require('../models/productModel');
 const orderModel = require('../models/orderModel');
 
